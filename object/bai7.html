@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class User{
+            constructor(id,user_name,email,password){
+                this.id=id;
+                this.user_name=user_name;
+                this.email=email;
+                this.password=password;
+            }
+        }
+        let arr=[]
+            let user=new User();
+            user.id=prompt("Nhập id")
+            do{
+                user.user_name=prompt("Nhập tên")
+            } while(!valName)          
+            do{
+                user.email=prompt("Nhập email")
+            } while(!valName)  
+            do{
+                user.password=prompt("Nhập mật khẩu")
+            }while(!valPass)
+        arr.push(user)
+        console.log(arr)
+        function valName(name){
+            if(name==""||name==null||name.length<3){
+                return false;
+            }
+            return true;
+        }
+        function valEmail(email){
+            if(email==""||email==null){
+                return false;
+            }
+            let atPos=email.indexOf("@"); 
+            let dotPos=email.indexOf(".");
+            if(atPos<1||dotPos<(atPos+2)||(dotPos+2)>email.length){
+                return false;
+            }
+        }
+        function valPass(password){
+            if(password==""||password==null||password.length<8){
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

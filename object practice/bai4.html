@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Book{
+            constructor(title,author,publishYear){
+                this.title=title,
+                this.author=author,
+                this.publishYear=publishYear
+            }
+            displayBook(){
+            console.log("Tiêu đề: "+this.title+". Tác giả: "+this.author+" Năm xuất bản:"+ this.publishYear)
+        }
+        }
+        class Libarary{
+            constructor(books){
+                this.books=[];
+            }
+            addBook(book){
+                this.books.push(book);
+            }
+            displayLibrary(){
+                for(let x of this.books){
+                    x.displayBook();
+                }
+            }
+        }
+        var myLibrary=new Libarary();
+        var book1=new Book("A","B",1)
+        var book2=new Book("A1","B1",2)
+        myLibrary.addBook(book1)
+        myLibrary.addBook(book2)
+        myLibrary.displayLibrary();
+    </script>
+</body>
+</html>

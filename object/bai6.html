@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Product{
+            constructor(id,product_name,price){
+                this.id=id;
+                this.product_name=product_name;
+                this.price=price;
+            }
+        }
+        let listProduct=[
+            new Product(1,"iphone 12",200),
+            new Product(2,"iphone 11",300),
+            new Product(3,"iphone 10",100),
+            new Product(4,"iphone 9",90)
+        ]
+        sortPriceInc(listProduct,Product);
+        console.log(listProduct);
+        function sortPriceInc(listProduct,Product){
+            for(let i=0;i<listProduct.length-1;i++){
+                for(let j=i+1;j<listProduct.length;j++){
+                    if(listProduct[i].price>listProduct[j].price){
+                        let tmp=listProduct[i];
+                        listProduct[i]=listProduct[j];
+                        listProduct[j]=tmp;
+                    }
+                }
+            }
+        }
+       
+    </script>
+</body>
+</html>

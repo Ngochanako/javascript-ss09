@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var phoneBook={
+            contact1: {
+                name:"Alice",
+                phone:"123",
+                email:"a@gmail.com",
+                displayInfo: function(){
+                    console.log("Tên:"+ this.name)
+                    console.log("Điện thoại:"+ this.phone)
+                    console.log("Email:"+ this.email)
+                }
+            },
+            contact2: {
+                name:"Bob",
+                phone:"456",
+                email:"b@gmail.com",
+                displayInfo: function(){
+                    console.log("Tên:"+ this.name)
+                    console.log("Điện thoại:"+ this.phone)
+                    console.log("Email:"+ this.email)
+                }
+            },
+        };
+        for(let x in phoneBook){
+          phoneBook[x].displayInfo();
+           console.log("-------------------------------")
+        }
+    </script>
+</body>
+</html>

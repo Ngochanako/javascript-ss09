@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Book{
+            constructor(author,name){
+                this.author=author;
+                this.name=name;
+            }
+        }
+        let listBook=[
+        new Book("huyen","Harry"),
+        new Book("Ngoc","ngủ"),
+        new Book("mai","hello")
+        ]
+        let authorName=prompt("Nhập tên tác giả");
+        let check=false;
+        for(let x of listBook){
+            if(x.author==authorName){
+                console.log(x);
+                check=true;
+                break;
+            }
+        }
+        if(!check){
+            console.log("Không tìm thấy thông tin")
+        }
+    </script>
+</body>
+</html>

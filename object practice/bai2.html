@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var phoneBook={
+            contact1: {
+                name:"Alice",
+                phone:"123",
+                email:"a@gmail.com",
+            },
+            contact2: {
+                name:"Bob",
+                phone:"456",
+                email:"b@gmail.com",
+            },
+        };
+        for(let x in phoneBook){
+           for(let i in phoneBook[x]){
+            if(i=="name") console.log("Tên :"+phoneBook[x][i])
+            if(i=="phone") console.log("Điện thoại :"+phoneBook[x][i])
+            if(i=="email") console.log("Email :"+phoneBook[x][i])
+           }
+           console.log("-------------------------------")
+        }
+    </script>
+</body>
+</html>

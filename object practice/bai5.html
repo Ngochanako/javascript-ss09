@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Book{
+            constructor(title,author,publishYear,isAvailable){
+                this.title=title;
+                this.author=author,
+                this.publishYear=publishYear,
+                this.isAvailable=isAvailable
+            }
+            borrow(){
+                if(this.isAvailable){ this.isAvailable=false;
+                console.log(`Sách ${this.title} vừa được cho mượn.`);
+                }else{
+                console.log(`Sách ${this.title} không có sẵn để cho mượn.`)
+                }
+            }
+            returnBook(){
+               if(!this.isAvailable){
+                this.isAvailable=true;
+                console.log(`Sách ${this.title} vừa được trả`);
+               } else{
+                console.log(`Sách ${this.title} có sẵn trong thư viện`)
+               }
+            }
+        }
+        class Library{
+            constructor(){
+                this.books=[];
+            }
+            isBookAvailable(book){
+                if(book.isAvailable){
+                    console.log(`Sách ${book.title} có sẵn để cho mượn`)
+                }else{
+                    console.log(`Sách ${book.title} không có sẵn để cho mượn`)
+                }
+            }
+        }
+        let myLibrary=new Library();
+        let book1=new Book("a","b",3,true)
+        let book2=new Book("a11","b1",31,false)
+        myLibrary.books.push(book1)
+        myLibrary.books.push(book2)
+        
+        book1.borrow();
+        book2.returnBook();
+        myLibrary.isBookAvailable(book1)
+        myLibrary.isBookAvailable(book2)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Information{
+            constructor(id,name,phone,address){
+                this.id=id;
+                this.name=name;
+                this.phone=phone;
+                this.address=address
+            }
+        }
+        var address=prompt("Nhập vào địa chỉ")
+        var id=prompt("Nhập vào id")
+        var phone=prompt("Nhập vào số điện thoại")
+        var name=prompt("Nhập vào tên")
+        let person=new Information(id,name,phone,address);
+        console.log(person)
+    </script>
+</body>
+</html>

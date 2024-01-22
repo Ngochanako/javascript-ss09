@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class User{
+            constructor(id,user_name,email,password){
+                this.id=id;
+                this.user_name=user_name;
+                this.email=email;
+                this.password=password;
+            }
+        }
+        listUser=[
+            new User(1,"huyen","huyen@gmail.com","123"),
+            new User(2,"ngoc","ngoc@gmail.com","123")
+        ]
+
+        var choice=+prompt("Nhập vào lựa chọn của bạn");
+        switch(choie){
+            case 1:
+                let user=new User();
+                user.id=prompt("Nhập id")
+                user.user_name=prompt("Nhập tên")       
+                user.email=prompt("Nhập email") 
+                user.password=prompt("Nhập mật khẩu")
+                if(valName&&valEmail&&valPass){
+                    lisProduct.push(user)
+                }else{
+                    console.log("Thông tin không hợp lệ")
+                }
+                break;
+            case 2:
+                let emailInput=prompt("Nhập vào email");
+                let passInput=prompt("Nhập vào mật khẩu");
+                let ok=true;
+                for(let x of lisProduct){
+                    if(x[email]==emailInput&&x[password]==passInput){
+                        console.log("Đăng nhập thành công");
+                        console.log(x);
+                        ok=false;
+                        break;
+                    }
+                }
+                if(ok){
+                    console.log("Đăng nhập không chính xác")
+                }
+                break;
+            default:
+                console.log("Nhập từ 1 đến 2")
+        }
+        function valName(name){
+            if(name==""||name==null||name.length<3){
+                return false;
+            }
+            return true;
+        }
+        function valEmail(email,listUser,User){
+            if(email==""||email==null){
+                return false;
+            }
+            for(let x of listUser){
+                if(email==x.email){
+                    return false;
+                }
+            }
+            let atPos=email.indexOf("@"); 
+            let dotPos=email.indexOf(".");
+            if(atPos<1||dotPos<(atPos+2)||(dotPos+2)>email.length){
+                return false;
+            }
+        }
+        function valPass(password){
+            if(password==""||password==null||password.length<8){
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

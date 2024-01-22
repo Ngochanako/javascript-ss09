@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Student{
+           constructor(id,name){
+            this.id=id;
+            this.name=name;
+           }
+        }       
+        let arr=[];         
+        let num=+prompt("Nhập số lượng sinh viên:");
+        for(let i=0;i<num;i++){
+            let student=new Student();
+            student.id=prompt("Nhập id")
+            student.name=prompt("Nhập tên")
+            arr.push(student);
+        }
+        console.log(arr)
+    </script>
+</body>
+</html>
